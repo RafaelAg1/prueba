@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import "./App.css";
 import MusicPlayer from "./components/Musica";
 import NotasTarjetas from "./components/Notas";
+import Cosas from "./components/Cosas";
 
 function App() {
   const [mostrandoContenido, setMostrandoContenido] = useState(false);
@@ -146,6 +147,7 @@ mi negrita, tú eres quien escribe mi vida. 💜`,
         </div>
       )}
       <MusicPlayer ref={audioRef} />
+      <Cosas />
     </div>
   );
 }
