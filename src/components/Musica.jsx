@@ -70,31 +70,41 @@ export default function MusicPlayer() {
   };
 
   return (
-    <div className="fixed bottom-4 left-4 bg-white shadow-xl rounded-xl px-4 py-3 flex items-center gap-4 border border-pink-300">
+    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white shadow-xl rounded-xl px-4 py-3 flex items-center gap-4 border border-pink-300 max-w-md w-full mx-4">
       <audio
         ref={audioRef}
         src={canciones[indice].archivo}
         onEnded={siguiente}
       />
-      <button onClick={anterior} title="Anterior">
-        <FaBackward className="text-pink-500 text-xl" />
+
+      <button
+        onClick={anterior}
+        title="Anterior"
+        className="text-pink-500 text-xl hover:text-pink-700 transition"
+      >
+        <FaBackward />
       </button>
-      <button onClick={reproduciendo ? pausar : reproducir} title="Play/Pausa">
-        {reproduciendo ? (
-          <FaPause className="text-pink-500 text-xl" />
-        ) : (
-          <FaPlay className="text-pink-500 text-xl" />
-        )}
+
+      <button
+        onClick={reproduciendo ? pausar : reproducir}
+        title="Play/Pausa"
+        className="text-pink-500 text-xl hover:text-pink-700 transition"
+      >
+        {reproduciendo ? <FaPause /> : <FaPlay />}
       </button>
-      <button onClick={siguiente} title="Siguiente">
-        <FaForward className="text-pink-500 text-xl" />
+
+      <button
+        onClick={siguiente}
+        title="Siguiente"
+        className="text-pink-500 text-xl hover:text-pink-700 transition"
+      >
+        <FaForward />
       </button>
 
       <span className="ml-2 text-sm text-gray-700 font-semibold max-w-xs truncate">
         {canciones[indice].titulo}
       </span>
 
-      {/* Slider de volumen */}
       <input
         type="range"
         min="0"

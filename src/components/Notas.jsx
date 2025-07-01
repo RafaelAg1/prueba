@@ -225,30 +225,33 @@ export default function NotasTarjetas() {
     }, 600); // duración de la animación
   };
 
-  return (
-    <div className="w-maxflex flex-col items-center justify-center min-h-screen max-h-30 bg-gradient-to-r from-pink-200 via-purple-400 to-indigo-400 p-6">
-      <h1 className="text-3xl font-bold mb-6 text-purple-700">Notas para ti 💜</h1>
+return (
+  <div className="w-full max-w-md flex flex-col items-center justify-center min-h-[250px] bg-gradient-to-r from-pink-200 via-purple-400 to-indigo-400 p-6 rounded-xl shadow-xl">
+    <h1 className="text-3xl font-bold mb-6 text-purple-700 text-center">
+      Notas para ti 💜
+    </h1>
 
-      <div
-        onClick={siguienteNota}
-        className={`max-w-md w-full bg-white rounded-xl shadow-lg p-6 cursor-pointer select-none
-          transform transition-transform duration-500 ${
-            animando ? "rotate-y-180" : ""
-          }`}
-        style={{
-          backfaceVisibility: "hidden",
-          perspective: "1000px",
-        }}
-      >
-        <h2 className="text-xl font-semibold mb-3 text-purple-600">
-          {notas[indice].titulo}
-        </h2>
-        <p className="text-gray-700 text-justify leading-relaxed">
-          {notas[indice].texto}
-        </p>
-      </div>
-
-      <p className="mt-4 text-sm text-gray-600">Dale click en la tarjeta para ver la siguiente mi amor</p>
+    <div
+      onClick={siguienteNota}
+      className={`w-full bg-white rounded-xl shadow-lg p-6 cursor-pointer select-none
+        transform transition-transform duration-500 ease-in-out
+        ${animando ? "rotate-y-180" : ""}`}
+      style={{
+        backfaceVisibility: "hidden",
+        perspective: "1000px",
+      }}
+    >
+      <h2 className="text-xl font-semibold mb-3 text-purple-600">
+        {notas[indice].titulo}
+      </h2>
+      <p className="text-gray-700 text-justify leading-relaxed whitespace-pre-line">
+        {notas[indice].texto}
+      </p>
     </div>
-  );
+
+    <p className="mt-4 text-sm text-gray-600 text-center">
+      Dale click en la tarjeta para ver la siguiente mi amor
+    </p>
+  </div>
+)
 }
