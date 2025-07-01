@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+.App {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  padding: 0;
+  margin: 0;
+  background-color: rgb(59, 55, 55);
+}
+
+
+
+
+input[type="range"].slider-morado {
+  -webkit-appearance: none; /* Para quitar estilo por defecto en WebKit */
+  width: 50%;
+  height: 6px;
+  border-radius: 5px;
+  background: #ddd; /* Fondo gris claro */
+  outline: none;
+}
+
+/* Track */
+input[type="range"].slider-morado::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 5px;
+  background: #ddd;
+}
+
+input[type="range"].slider-morado::-moz-range-track {
+  height: 6px;
+  border-radius: 5px;
+  background: #ddd;
+}
+
+/* Thumb (la bolita) */
+input[type="range"].slider-morado::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #7c3aed; /* Morado (Tailwind purple-700) */
+  cursor: pointer;
+  margin-top: -6px; /* Centrar verticalmente */
+  border: 2px solid #5b21b6; /* Morado más oscuro para borde */
+  transition: background-color 0.3s ease;
+}
+
+input[type="range"].slider-morado::-webkit-slider-thumb:hover {
+  background: #9d4edd; /* Morado más claro al hover */
+}
+
+input[type="range"].slider-morado::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #7c3aed;
+  border: 2px solid #5b21b6;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="range"].slider-morado::-moz-range-thumb:hover {
+  background: #9d4edd;
+}
